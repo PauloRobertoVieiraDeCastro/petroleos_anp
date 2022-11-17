@@ -1,0 +1,46 @@
+{% extends 'header.html' %}
+
+{% block content %}
+<section class="my-3 jumbotron justify-content-center py-3" style="margin-top: 200px">
+    <div class="table-responsive justify-content-center" style="margin-top:100px">    
+        <form action="{{ url_for('criar') }}" method="post">
+            <fieldset>
+                <div class="form-group">
+                    <label for="corrente">Corrente</label>
+                    <input type="text" id="corrente" name="corrente" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Tipo de hidrocarboneto</label>
+                    <input type="text" id="tipo" name="tipo" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="bacia">Bacia produtora</label>
+                    <input type="text" id="bacia" name="bacia" class="form-control" required>
+                </div>
+                <div class="form-group">
+                	<label for="API">Grau API</label>
+                	<input type="number" min="-10" step="0.1" id="API" name="API" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="nafta">Percentual de naftas</label>
+                    <input type="number" min="0" step="0.1" id="nafta" name="nafta" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="medio">Percentual de destilados médios</label>
+                    <input type="number" min="0" step="0.1" id="medio" name="medio" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="residuo">Percentual de resíduos</label>
+                    <input type="number" min="0" step="0.1" id="residuo" name="residuo" class="form-control">
+                </div>
+                          
+            </fieldset>
+
+            <div class="my-3">
+                <button type="submit" class="btn btn-primary btn-salvar">Salvar dados</button>
+                <a class="btn btn-danger btn-voltar" href="{{url_for('sessao')}}">Voltar</a>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

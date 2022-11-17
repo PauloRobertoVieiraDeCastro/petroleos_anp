@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Correntes ANP</title>
+        <script src="https://kit.fontawesome.com/133b0d3f9c.js" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+        <link href='https://fonts.googleapis.com/css?family=Alegreya+SC' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='anp.css') }}">
+        <!--<link rel="stylesheet" href="get.css">
+        <link rel="shortcut icon" href="get3.ico"/>-->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
+        <script src="https://kit.fontawesome.com/133b0d3f9c.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
+        
+    </head>
+<body>
+    <div class="super">
+        <div class="superinfo-bg"> <!--acima do cabeçalho-->
+                <div class="superinfo col text-center d-block">
+                  Caracterização das correntes ANP
+                </div>
+        </div>
+
+
+        <nav class="navbar navbar-expand-md fixed-top py-3 box-shadow estilo_nav"> <!--expande apos 760 px-->
+               
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color:#781568; font-size:28px;"></i></span>
+                </button>
+
+                <div id="navbarText" class="collapse navbar-collapse"><!--O id deve ser esse, pois mostrará todo o conteudo com o toggle button-->
+                    <ul class="navbar-nav ml-auto"> <!--gera margem esquerda, levando para direita-->
+
+                        <li class="nav-item">
+                            <a class="nav-link ml-md-2 itens_nav" href="{{ url_for('sessao') }}">Home</a>
+                        </li>     
+                        
+                        <li class="nav-item">
+                            <a class="nav-link ml-md-2 itens_nav" href="{{ url_for('inserir') }}">Cadastrar corrente</a>
+                        </li>                    
+
+                         <li class="nav-item">
+                            <a class="nav-link ml-md-2 itens_nav" href="{{ url_for('dashboard') }}">Dashboard das correntes</a>
+                        </li>
+
+                         <li class="nav-item">
+                            <a class="nav-link ml-md-2 itens_nav" href="{{ url_for('logout') }}">Logout</a>
+                        </li>
+
+                    </ul>
+                </div>
+ 
+        </nav>
+    </div>
+
+    {% block content %}{% endblock %} 
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!--<script type="text/javascript" src="adddel.js"></script>-->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"> </script>
+        <script type="text/javascript" src="{{ url_for('static', filename='localiza.js') }}"></script>
+    </body>
+</html>
